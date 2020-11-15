@@ -1,0 +1,54 @@
+Package: fec20
+Title: Data Package for the 2020 United States Federal Elections
+Version: 0.0.0.9000
+Authors@R: c(
+    person(given = "Marium",
+           family = "Tapal",
+           role = c("aut", "cre"),
+           email = "mariumtapal@gmail.com", 
+           comment = c(ORCID = "0000-0001-5093-6462")),
+    person(given = "Rana",
+           family = "Gahwagy",
+           role = "aut",
+           email = "r.w.g1@hotmail.com"),
+    person(given = "Irene",
+           family = "Ryan",
+           role = "aut",
+           email = "ryan.irene3@gmail.com"),
+    person(given = "Benjamin S.",
+           family = "Baumer",
+           role = "aut",
+           email = "ben.baumer@gmail.com", 
+           comment = c(ORCID = "0000-0002-3279-0516")
+           )
+    )
+Maintainer: Marium Tapal <mariumtapal@gmail.com>
+Description: Easily analyze relational data from the United States 2016 federal 
+    election cycle as reported by the Federal Election Commission.
+    This package contains data about candidates, committees, and a
+    variety of different financial expenditures. Data is from <https://www.fec.gov/data/browse-data/?tab=bulk-data>. 
+License: CC0
+Depends: 
+    R (>= 3.5.0)
+Imports:
+    dplyr,
+    readr,
+    vroom
+Suggests:
+    testthat (>= 2.1.0),
+    scales,
+    knitr,
+    rmarkdown,
+    fs,
+    lubridate,
+    ggplot2,
+    stringr,
+    usethis,
+    utf8
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/baumer-lab/fec20
+BugReports: https://github.com/baumer-lab/fec20/issues
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+VignetteBuilder: knitr
