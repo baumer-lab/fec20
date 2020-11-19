@@ -12,6 +12,8 @@ status](https://r-pkg.org/badges/version/fec20)](https://CRAN.R-project.org/pack
 [![Travis-CI Build
 Status](https://travis-ci.org/baumer-lab/fec20.svg?branch=master)](https://travis-ci.org/baumer-lab/fec20)
 <!-- [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/fec20)](https://www.r-pkg.org:443/pkg/fec20) -->
+[![Travis build
+status](https://travis-ci.com/baumer-lab/fec20.svg?branch=master)](https://travis-ci.com/baumer-lab/fec20)
 <!-- badges: end -->
 
 **fec20** contains data from the [Federal Election Commission
@@ -23,7 +25,7 @@ Additionally, for the datasets that are included as samples, the package
 includes functions that import the full versions.
 
 This package is a natural successor of the `fec16` R package (that
-contains data from the 2019-2020 elections). `fec16` is available on
+contains data from the 2015-2016 elections). `fec16` is available on
 CRAN.
 
 ## Installation
