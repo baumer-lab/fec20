@@ -9,9 +9,6 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://r-pkg.org/badges/version/fec20)](https://CRAN.R-project.org/package=fec20)
-[![Travis-CI Build
-Status](https://travis-ci.org/baumer-lab/fec20.svg?branch=master)](https://travis-ci.org/baumer-lab/fec20)
-<!-- [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/fec20)](https://www.r-pkg.org:443/pkg/fec20) -->
 [![Travis build
 status](https://travis-ci.com/baumer-lab/fec20.svg?branch=master)](https://travis-ci.com/baumer-lab/fec20)
 <!-- badges: end -->
