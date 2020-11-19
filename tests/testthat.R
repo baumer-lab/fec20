@@ -1,4 +1,4 @@
 library(testthat)
-library(fec16)
+library(fec20)
 
-test_check("fec16")
+test_check("fec20")

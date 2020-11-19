@@ -1,9 +1,9 @@
-#' fec16: A Data Package for the 2016 Elections
+#' fec20: A Data Package for the 2020 Elections
 #'
-#' The fec16 package provides the following 9 datasets from the Federal Election Commission's 2015-2016 election cycle:
+#' The fec20 package provides the following 9 datasets from the Federal Election Commission's 2019-2020 election cycle:
 #'
 #' @section Datasets:
-#' \if{html}{\figure{hex_fec16.png}{options: align = "right" width="45\%" alt="Figure: hex_fec16.png"}}
+#' \if{html}{\figure{hex_fec20.png}{options: align = "right" width="45\%" alt="Figure: hex_fec16.png"}}
 #' \itemize{
 #'   \item Candidates: [candidates]
 #'   \item Committees: [committees]
@@ -26,7 +26,7 @@
 #'   \item Transactions From One Committee To Another: [read_all_transactions]
 #' }
 #'
-#' In addition, `fec16` provides the [states] dataset giving geographical information about the 50 states.
+#' In addition, `fec20` provides the [states] dataset giving geographical information about the 50 states.
 #'
 #' @section Authors:
 #' \itemize{
@@ -37,5 +37,5 @@
 #' }
 #'
 #' @docType package
-#' @name fec16
+#' @name fec20
 NULL

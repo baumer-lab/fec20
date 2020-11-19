@@ -23,7 +23,7 @@ Authors@R: c(
            )
     )
 Maintainer: Marium Tapal <mariumtapal@gmail.com>
-Description: Easily analyze relational data from the United States 2016 federal 
+Description: Easily analyze relational data from the United States 2020 federal 
     election cycle as reported by the Federal Election Commission.
     This package contains data about candidates, committees, and a
     variety of different financial expenditures. Data is from <https://www.fec.gov/data/browse-data/?tab=bulk-data>. 

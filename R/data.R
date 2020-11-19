@@ -28,7 +28,7 @@
 
 #' Committee contributions metadata
 #'
-#' @description Provides data pertaining to each candidate and their contributions from committees during the 2016 general election.
+#' @description Provides data pertaining to each candidate and their contributions from committees during the 2020 general election.
 #'
 #' @format A data frame with 1000 rows and 15 columns with information about candidate committee contributions.
 #' \describe{

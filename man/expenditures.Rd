@@ -53,7 +53,7 @@ The back reference transaction ID of the specific purchases will equal the trans
 }
 }
 \source{
-\url{https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/}, updated 2020-03-02
+\url{https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/}, updated 2020-11-18
 }
 \usage{
 expenditures

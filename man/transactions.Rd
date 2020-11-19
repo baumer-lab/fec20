@@ -45,7 +45,7 @@ appearing in an FEC electronic file. A transaction ID is unique for a specific c
 }
 }
 \source{
-\url{https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/}, updated 2020-03-02
+\url{https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/}, updated 2020-11-18
 }
 \usage{
 transactions

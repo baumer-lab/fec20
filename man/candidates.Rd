@@ -5,7 +5,7 @@
 \alias{candidates}
 \title{Candidates Master metadata}
 \format{
-A data frame with 4648 rows and 15 columns, providing information
+A data frame with 5178 rows and 15 columns, providing information
 for each candidate:
 \describe{
 \item{cand_id}{A 9-character alpha-numeric code assigned to a candidate by the FEC, which remains
@@ -28,7 +28,7 @@ N = Not yet a statutory candidate, P = Statutory candidate in prior cycle}
 }
 }
 \source{
-\url{https://www.fec.gov/campaign-finance-data/candidate-master-file-description/}, updated 2020-03-02
+\url{https://www.fec.gov/campaign-finance-data/candidate-master-file-description/}, updated 2020-11-18
 }
 \usage{
 candidates
