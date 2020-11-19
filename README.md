@@ -1,21 +1,19 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# fec16 <img src="data-raw/Sticker/hex_fec16.png" align="right" height=140/>
+<!-- # fec20 <img src="data-raw/Sticker/hex_fec20.png" align="right" height=140/> -->
 
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![CRAN
-status](https://r-pkg.org/badges/version/fec16)](https://CRAN.R-project.org/package=fec16)
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- [![CRAN status](https://r-pkg.org/badges/version/fec20)](https://CRAN.R-project.org/package=fec20) -->
 [![Travis-CI Build
-Status](https://travis-ci.org/baumer-lab/fec16.svg?branch=master)](https://travis-ci.org/baumer-lab/fec16)
-[![CRAN RStudio mirror
-downloads](https://cranlogs.r-pkg.org/badges/fec16)](https://www.r-pkg.org:443/pkg/fec16)
+Status](https://travis-ci.org/baumer-lab/fec20.svg?branch=master)](https://travis-ci.org/baumer-lab/fec20)
+<!-- [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/fec20)](https://www.r-pkg.org:443/pkg/fec20) -->
 <!-- badges: end -->
 
-**fec16** contains data from the [Federal Election Commission
+**fec20** contains data from the [Federal Election Commission
 (FEC)](https://www.fec.gov/) website pertaining to candidates,
 committees, results, contributions from committees and individuals, and
 other financial [data for the United States 2015-2016 election
@@ -25,23 +23,17 @@ includes functions that import the full versions.
 
 ## Installation
 
-Get the latest released version from CRAN:
-
-``` r
-install.packages("fec16")
-```
-
-Or the development version from GitHub:
+Install the development version from GitHub:
 
 ``` r
 # If you haven't installed the remotes package yet, do so:
 # install.packages("remotes")
-remotes::install_github("baumer-lab/fec16")
+remotes::install_github("baumer-lab/fec20")
 ```
 
 ``` r
 # Load package
-library(fec16)
+library(fec20)
 ```
 
 ## Datasets Included
@@ -88,7 +80,7 @@ The headers of each table show the dataset name. The underlined
 variables are **primary keys** while all the others are **foreign
 keys**. The arrows show how the datasets are connected.
 
-<img src="inst/fec16-dm.jpeg" align="center"/>
+<!-- <img src="inst/fec20-dm.jpeg" align="center"/> -->
 
 The diagram is built using the `dm` R package. The code can be found in
 `data-raw/dm.R`.
@@ -97,7 +89,7 @@ The diagram is built using the `dm` R package. The code can be found in
 
 ### Data Wrangling
 
-`fec16` can be used to summarize data in order see how many candidates
+`fec20` can be used to summarize data in order see how many candidates
 are running for elections (in all offices) for the two major parties:
 
 ``` r

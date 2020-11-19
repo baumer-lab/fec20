@@ -2,7 +2,7 @@ library(tidyverse)
 library(usethis)
 
 dir <- usethis::use_zip(
-  "https://www.fec.gov/files/bulk-downloads/2016/cm16.zip",
+  "https://www.fec.gov/files/bulk-downloads/2020/cm20.zip",
   destdir = tempdir(), cleanup = TRUE
 )
 

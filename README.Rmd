@@ -15,17 +15,19 @@ knitr::opts_chunk$set(
 ```
 
 
-# fec20 <img src="data-raw/Sticker/hex_fec20.png" align="right" height=140/>
+<!-- # fec20 <img src="data-raw/Sticker/hex_fec20.png" align="right" height=140/> -->
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![CRAN status](https://r-pkg.org/badges/version/fec20)](https://CRAN.R-project.org/package=fec20)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- [![CRAN status](https://r-pkg.org/badges/version/fec20)](https://CRAN.R-project.org/package=fec20) -->
 [![Travis-CI Build Status](https://travis-ci.org/baumer-lab/fec20.svg?branch=master)](https://travis-ci.org/baumer-lab/fec20)
-[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/fec20)](https://www.r-pkg.org:443/pkg/fec20)
+<!-- [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/fec20)](https://www.r-pkg.org:443/pkg/fec20) -->
 <!-- badges: end -->
 
 
-**fec20** contains data from the [Federal Election Commission (FEC)](https://www.fec.gov/) website pertaining to candidates, committees, results, contributions from committees and individuals, and other financial [data for the United States 2015-2016 election cycle](https://www.fec.gov/data/browse-data/?tab=bulk-data). Additionally, for the datasets that are included as samples, the package includes functions that import the full versions.
+**fec20** contains data from the [Federal Election Commission (FEC)](https://www.fec.gov/) website pertaining to candidates, committees, results, contributions from committees and individuals, and other financial [data for the United States 2019-2020 election cycle](https://www.fec.gov/data/browse-data/?tab=bulk-data). Additionally, for the datasets that are included as samples, the package includes functions that import the full versions.
+
+This package is a natural successor of the `fec16` R package (that contains data from the 2015-2016 elections) available on CRAN. 
 
 
 ## Installation
@@ -76,7 +78,7 @@ The following functions retrieve the entire datasets for the sampled ones listed
 
 The headers of each table show the dataset name. The underlined variables are **primary keys** while all the others are **foreign keys**. The arrows show how the datasets are connected. 
 
-<img src="inst/fec20-dm.jpeg" align="center"/>
+<!-- <img src="inst/fec20-dm.jpeg" align="center"/> -->
 
 The diagram is built using the `dm` R package. The code can be found in `data-raw/dm.R`.
 
@@ -100,11 +102,6 @@ data
 ### Data Visualization 
 
 We can visualize the above data:
-
-```{r, include=FALSE}
-set.seed(21)
-```
-
 
 ```{r party-plot, message=FALSE, warning=FALSE}
 library(ggplot2)

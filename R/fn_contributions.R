@@ -16,13 +16,13 @@ read_all_contributions <- function(n_max = Inf, verbose = interactive()) {
   if (!verbose) {
     invisible(utils::capture.output(
       dir <- usethis::use_zip(
-        "https://www.fec.gov/files/bulk-downloads/2016/pas216.zip",
+        "https://www.fec.gov/files/bulk-downloads/2020/pas220.zip",
         destdir = tempdir(), cleanup = TRUE
       )
     ))
   } else {
     dir <- usethis::use_zip(
-      "https://www.fec.gov/files/bulk-downloads/2016/pas216.zip",
+      "https://www.fec.gov/files/bulk-downloads/2020/pas220.zip",
       destdir = tempdir(), cleanup = TRUE
     )
   }

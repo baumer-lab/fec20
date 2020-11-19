@@ -2,7 +2,7 @@
 #'
 #' @description Basic information for each candidate.
 #'
-#' @format A data frame with 4648 rows and 15 columns, providing information
+#' @format A data frame with 5178 rows and 15 columns, providing information
 #' for each candidate:
 #' \describe{
 #'   \item{cand_id}{A 9-character alpha-numeric code assigned to a candidate by the FEC, which remains
@@ -23,7 +23,7 @@
 #'   \item{cand_st}{Candidate's Mailing address - state}
 #'   \item{cand_zip}{Candidate's Mailing address - ZIP code}
 #' }
-#' @source <https://www.fec.gov/campaign-finance-data/candidate-master-file-description/>, updated 2020-03-02
+#' @source <https://www.fec.gov/campaign-finance-data/candidate-master-file-description/>, updated 2020-11-18
 "candidates"
 
 #' Committee contributions metadata
@@ -69,14 +69,14 @@
 #'   \item{tran_id}{Only for Electronic Filings. A unique identifier associated with each itemization or transaction
 #'   appearing in an FEC electronic file. A transaction ID is unique for a specific committee for a specific report.}
 #' }
-#' @source <https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/>, Updated 2020-03-02
+#' @source <https://www.fec.gov/campaign-finance-data/contributions-committees-candidates-file-description/>, Updated 2020-11-18
 "contributions"
 
 #' Committees metadata
 #'
 #' @description Provides data pertaining to each committee registered with the Federal Election Commission.
 #'
-#' @format A data frame with 17654 rows and 15 columns with information about FEC committees.
+#' @format A data frame with 18025 rows and 15 columns with information about FEC committees.
 #' \describe{
 #'   \item{cmte_id}{A 9-character alpha-numeric code assigned to a committee by the Federal Election Commission}
 #'   \item{cmte_nm}{Name of the committee}
@@ -127,7 +127,7 @@
 #'   \item{cand_id}{Candidate identification:When a committee has a committee type designation of H, S, or P,
 #'   the candidate's identification number will be entered in this field.}
 #' }
-#' @source <https://www.fec.gov/campaign-finance-data/committee-master-file-description/>, updated 2020-03-02
+#' @source <https://www.fec.gov/campaign-finance-data/committee-master-file-description/>, updated 2020-11-18
 "committees"
 
 #' Individual Contributions Master metadata
@@ -174,7 +174,7 @@
 #'   \item{tran_id}{Only for Electronic Filings. A unique identifier associated with each itemization or transaction
 #'   appearing in an FEC electronic file. A transaction ID is unique for a specific committee for a specific report.}
 #' }
-#' @source <https://www.fec.gov/campaign-finance-data/contributions-individuals-file-description/>, updated 2020-03-02
+#' @source <https://www.fec.gov/campaign-finance-data/contributions-individuals-file-description/>, updated 2020-11-18
 "individuals"
 
 #' General Federal Election Results
@@ -212,7 +212,7 @@
 #'
 #' @description Summary financial information for each campaign.
 #'
-#' @format A data frame with 1898 rows and 25 columns, providing financial
+#' @format A data frame with 2635 rows and 25 columns, providing financial
 #' information for each House/Senate campaign:
 #' \describe{
 #'   \item{cand_id}{A code assigned to a candidate by the FEC}
@@ -242,7 +242,7 @@
 #'   \item{indiv_refunds}{Refunds to individuals}
 #'   \item{cmte_refunds}{Refunds to committees}
 #' }
-#' @source <https://transition.fec.gov/general/FederalElections2016.shtml>, updated 2020-03-02
+#' @source <https://transition.fec.gov/general/FederalElections2020.shtml>, updated 2020-11-18
 "campaigns"
 
 #' Operating Expenditures
@@ -296,7 +296,7 @@
 #'   For example, a credit card payment and the sub-itemization of specific purchases.
 #'   The back reference transaction ID of the specific purchases will equal the transaction ID of the payment to the credit card company.}
 #'   }
-#' @source <https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/>, updated 2020-03-02
+#' @source <https://www.fec.gov/campaign-finance-data/operating-expenditures-file-description/>, updated 2020-11-18
 "expenditures"
 
 #' Any Transaction From One Committee To Another
@@ -341,14 +341,14 @@
 #'   \item{tran_id}{Only for Electronic Filings. A unique identifier associated with each itemization or transaction
 #'   appearing in an FEC electronic file. A transaction ID is unique for a specific committee for a specific report.}
 #'   }
-#' @source <https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/>, updated 2020-03-02
+#' @source <https://www.fec.gov/campaign-finance-data/any-transaction-one-committee-another-file-description/>, updated 2020-11-18
 "transactions"
 
 #' Political Action Committee (PAC) and Party Summary Financial Information
 #'
 #' @description PAC and party summary financial information
 #'
-#' @format A data frame with 12049 rows and 27 columns:
+#' @format A data frame with 11319 rows and 27 columns:
 #' \describe{
 #'   \item{cmte_id}{A 9-character alpha-numeric code assigned to a committee by the Federal Election Commission}
 #'   \item{cmte_nm}{Name of the committee}
@@ -400,7 +400,7 @@
 #'   \item{nonfed_share_exp}{Non-federal share expenditures}
 #'   \item{cvg_end_dt}{Coverage end date (YYYY-MM-DD)}
 #'   }
-#' @source <https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/>, updated 2020-03-02
+#' @source <https://www.fec.gov/campaign-finance-data/pac-and-party-summary-file-description/>, updated 2020-11-18
 "pac"
 
 #' US States lookup table

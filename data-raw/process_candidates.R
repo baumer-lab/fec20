@@ -1,7 +1,7 @@
 library(tidyverse)
 
 cand_dir <- usethis::use_zip(
-  "https://www.fec.gov/files/bulk-downloads/2016/cn16.zip",
+  "https://www.fec.gov/files/bulk-downloads/2020/cn20.zip",
   destdir = tempdir(), cleanup = TRUE
 )
 
@@ -16,6 +16,6 @@ candidates <- read_delim(
   col_names = cand_names,
   delim = "|"
 ) %>%
-  filter(cand_election_yr %in% c(2015:2016))
+  filter(cand_election_yr %in% c(2019:2020))
 
 usethis::use_data(candidates, overwrite = TRUE)

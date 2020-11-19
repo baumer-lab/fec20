@@ -1,11 +1,11 @@
 library(tidyverse)
 
 pac_dir <- usethis::use_zip(
-  "https://www.fec.gov/files/bulk-downloads/2016/webk16.zip",
+  "https://www.fec.gov/files/bulk-downloads/2020/webk20.zip",
   destdir = tempdir(), cleanup = TRUE
 )
 
-pac_path <- fs::path(pac_dir, "webk16.txt")
+pac_path <- fs::path(pac_dir, "webk20.txt")
 
 pac_names <- c("CMTE_ID", "CMTE_NM", "CMTE_TP", "CMTE_DSGN", "CMTE_FILING_FREQ", "TTL_RECEIPTS",
                "TRANS_FROM_AFF", "INDV_CONTRIB", "OTHER_POL_CMTE_CONTRIB", "CAND_CONTRIB",
