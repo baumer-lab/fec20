@@ -26,7 +26,7 @@ knitr::opts_chunk$set(
 
 **fec20** contains data from the [Federal Election Commission (FEC)](https://www.fec.gov/) website pertaining to candidates, committees, results (forthcoming), contributions from committees and individuals, and other financial [data for the United States 2019-2020 election cycle](https://www.fec.gov/data/browse-data/?tab=bulk-data). Additionally, for the datasets that are included as samples, the package includes functions that import the full versions.
 
-This package is a natural successor of the `fec16` R package (that contains data from the 2015-2016 elections). `fec16` is available on CRAN. 
+This package is a natural successor of the [`fec16` R package](https://github.com/baumer-lab/fec16) (that contains data from the 2015-2016 elections). `fec16` is available on CRAN. 
 
 ## Installation
 

@@ -21,9 +21,9 @@ election cycle](https://www.fec.gov/data/browse-data/?tab=bulk-data).
 Additionally, for the datasets that are included as samples, the package
 includes functions that import the full versions.
 
-This package is a natural successor of the `fec16` R package (that
-contains data from the 2015-2016 elections). `fec16` is available on
-CRAN.
+This package is a natural successor of the [`fec16` R
+package](https://github.com/baumer-lab/fec16) (that contains data from
+the 2015-2016 elections). `fec16` is available on CRAN.
 
 ## Installation
 
@@ -75,10 +75,10 @@ calling each function is given for reference. All functions have an
 argument `n_max` which defaults to the entire dataset but the user can
 specify the max length of the dataset to be loaded via this argument.
 
--   `read_all_individuals()` \~ 4.37GB
--   `read_all_contributions()` \~ 14.2MB
--   `read_all_expenditures()` \~ 52.1MB
--   `read_all_transactions()` \~ 118.9MB
+-   `read_all_individuals()` \~ 9.33GB
+-   `read_all_contributions()` \~ 28.9MB
+-   `read_all_expenditures()` \~ 65.6MB
+-   `read_all_transactions()` \~ 235MB
 
 ## How is the data relational?
 
