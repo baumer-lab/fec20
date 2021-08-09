@@ -177,37 +177,6 @@
 #' @source <https://www.fec.gov/campaign-finance-data/contributions-individuals-file-description/>, updated 2020-11-18
 "individuals"
 
-#' General Federal Election Results
-#'
-#' @description 2016 House General Election Results
-#'
-#' @format 3 data frames with information about the House, Senate, and Presidential Election results:
-#' \describe{
-#'   \item{state}{The state of the votes}
-#'   \item{district_id}{District ID}
-#'   \item{cand_id}{A code assigned to a candidate by the FEC}
-#'   \item{incumbent}{A logical variable: TRUE if incumbent, FALSE if not}
-#'   \item{party}{Party of the candidate}
-#'   \item{primary_votes}{Number of votes in the primary election}
-#'   \item{primary_percent}{Percentage of votes in the primary election}
-#'   \item{runoff_votes}{Number of runoff votes}
-#'   \item{runoff_percent}{Percentage of runoff votes}
-#'   \item{general_votes}{Number of votes in the general election}
-#'   \item{general_percent}{Percentage of votes in the general election}
-#'   \item{won}{A logical variable: TRUE if candidate won, FALSE if not}
-#'   \item{footnotes}{Footnotes}
-#' }
-#' @source <https://transition.fec.gov/general/FederalElections2016.shtml>, updated 2020-03-02
-"results_house"
-
-#' @rdname results_house
-#' @description 2016 Senate General Election Results
-"results_senate"
-
-#' @rdname results_house
-#' @description 2016 Presidential General Election Results
-"results_president"
-
 #' House/Senate Current Campaigns
 #'
 #' @description Summary financial information for each campaign.

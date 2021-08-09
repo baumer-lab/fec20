@@ -5,7 +5,7 @@
 \alias{fec20}
 \title{fec20: A Data Package for the 2020 Elections}
 \description{
-The fec20 package provides the following 9 datasets from the Federal Election Commission's 2019-2020 election cycle:
+The fec20 package provides the following 6 datasets from the Federal Election Commission's 2019-2020 election cycle:
 }
 \section{Datasets}{
 
@@ -13,9 +13,6 @@ The fec20 package provides the following 9 datasets from the Federal Election Co
 \itemize{
 \item Candidates: \link{candidates}
 \item Committees: \link{committees}
-\item House Results: \link{results_house}
-\item Senate Results: \link{results_senate}
-\item Presidential Results: \link{results_president}
 \item Individual Contributions: \link{individuals}
 \item Committee Contributions: \link{contributions}
 \item House/Senate Current Campaigns: \link{campaigns}
@@ -23,7 +20,7 @@ The fec20 package provides the following 9 datasets from the Federal Election Co
 \item Transactions From One Committee To Another: \link{transactions}
 \item Political Action Committee (PAC) and Party Summary Financial Information: \link{pac}}
 
-The entire \link{candidates}, \link{committees}, \link{campaigns}, \link{results_house}, \link{results_senate}, \link{results_president}, and \link{pac} datasets and samples containing 1000 entries of the other datasets are available directly in the package.
+The entire \link{candidates}, \link{committees}, \link{campaigns}, and \link{pac} datasets and samples containing 1000 entries of the other datasets are available directly in the package.
 For the datasets containing samples, full versions can be retrieved via the following functions:
 \itemize{
 \item Individual Contributions: \link{read_all_individuals}
@@ -33,6 +30,8 @@ For the datasets containing samples, full versions can be retrieved via the foll
 }
 
 In addition, \code{fec20} provides the \link{states} dataset giving geographical information about the 50 states.
+
+Note: There are 3 forthcoming datasets that contain results from the House, Senate, and Presidential elections.
 }
 
 \section{Authors}{

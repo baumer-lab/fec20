@@ -16,7 +16,7 @@ test_that("number of rows in committees df is correct", {
 })
 
 
-# Need to update test when dataset is updated
+# Need to update tests when package is updated
 
 # # results
 # test_that("house results are accurate", {

@@ -9,15 +9,15 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://r-pkg.org/badges/version/fec20)](https://CRAN.R-project.org/package=fec20)
-[![Travis build
-status](https://travis-ci.com/baumer-lab/fec20.svg?branch=master)](https://travis-ci.com/baumer-lab/fec20)
+[![R build
+status](https://github.com/baumer-lab/fec20/workflows/R-CMD-check/badge.svg)](https://github.com/baumer-lab/fec20/actions/workflows/R-CMD-check.yml)
 <!-- badges: end -->
 
 **fec20** contains data from the [Federal Election Commission
 (FEC)](https://www.fec.gov/) website pertaining to candidates,
-committees, results, contributions from committees and individuals, and
-other financial [data for the United States 2019-2020 election
-cycle](https://www.fec.gov/data/browse-data/?tab=bulk-data).
+committees, results (forthcoming), contributions from committees and
+individuals, and other financial [data for the United States 2019-2020
+election cycle](https://www.fec.gov/data/browse-data/?tab=bulk-data).
 Additionally, for the datasets that are included as samples, the package
 includes functions that import the full versions.
 
@@ -42,35 +42,30 @@ library(fec20)
 
 ## Datasets Included
 
-Note: The results datasets listed below are from the 2016 election. 2020
-results won’t be available until they are officially published in
-January 2021.
-
 ### Full Datasets
 
-  - `candidates`: candidates registered with the FEC during the
+-   `candidates`: candidates registered with the FEC during the
     2019-2020 election cycle
-  - `committees`: committees registered with the FEC during the
+-   `committees`: committees registered with the FEC during the
     2019-2020 election cycle
-  - `campaigns`: the House/Senate current campaigns
-  - `results_house`: the House results of the 2020 general election
-    (planned)
-  - `results_senate`: the Senate results of the 2020 general election
-    (planned)
-  - `results_president`: the final results of the 2020 general election
-    (planned)
-  - `pac`: Political Action Committee (PAC) and party summary financial
+-   `campaigns`: the House/Senate current campaigns
+-   `pac`: Political Action Committee (PAC) and party summary financial
     information
-  - `states`: geographical information about the 50 states
+-   `states`: geographical information about the 50 states
 
 ### Sample Datasets (with 1000 random rows each)
 
-  - `individuals`: individual contributions to candidates/committees
+-   `individuals`: individual contributions to candidates/committees
     during the 2020 election cycle
-  - `contributions`: candidates and their contributions from committees
+-   `contributions`: candidates and their contributions from committees
     during the 2020 election cycle
-  - `expenditures`: the operating expenditures
-  - `transactions`: transactions between committees
+-   `expenditures`: the operating expenditures
+-   `transactions`: transactions between committees
+
+### Forthcoming Datasets
+
+There are 3 forthcoming datasets that contain results from the House,
+Senate, and Presidential elections.
 
 ## Functions Included
 
@@ -80,10 +75,10 @@ calling each function is given for reference. All functions have an
 argument `n_max` which defaults to the entire dataset but the user can
 specify the max length of the dataset to be loaded via this argument.
 
-  - `read_all_individuals()` ~ 4.37GB
-  - `read_all_contributions()` ~ 14.2MB
-  - `read_all_expenditures()` ~ 52.1MB
-  - `read_all_transactions()` ~ 118.9MB
+-   `read_all_individuals()` \~ 4.37GB
+-   `read_all_contributions()` \~ 14.2MB
+-   `read_all_expenditures()` \~ 52.1MB
+-   `read_all_transactions()` \~ 118.9MB
 
 ## How is the data relational?
 
@@ -91,7 +86,7 @@ The headers of each table show the dataset name. The underlined
 variables are **primary keys** while all the others are **foreign
 keys**. The arrows show how the datasets are connected.
 
-<img src="inst/fec16-dm.jpeg" align="center"/>
+<img src="inst/fec20-dm.jpeg" align="center"/>
 
 The diagram is built using the `dm` R package. The code can be found in
 `data-raw/dm.R`.
@@ -114,7 +109,7 @@ data <- candidates %>%
 data
 #> # A tibble: 2 x 2
 #>   cand_pty_affiliation  size
-#>   <chr>                <int>
+#> * <chr>                <int>
 #> 1 DEM                   1836
 #> 2 REP                   1879
 ```
@@ -141,12 +136,12 @@ ggplot(data, aes(x = cand_pty_affiliation, y = size, fill = cand_pty_affiliation
 If you are interested in political data, check out the following related
 packages:
 
-  - [`politicaldata`](https://github.com/elliottmorris/politicaldata/)
-  - [`ProPublicaR`](https://github.com/dietrichson/ProPublicaR)
+-   [`politicaldata`](https://github.com/elliottmorris/politicaldata/)
+-   [`ProPublicaR`](https://github.com/dietrichson/ProPublicaR)
 
 ## Contributors
 
-  - [Marium Tapal](https://github.com/mariumtapal)
-  - [Irene Ryan](https://github.com/ireneryan)
-  - [Rana Gahwagy](https://github.com/ranawg)
-  - [Benjamin S. Baumer](https://github.com/beanumber)
+-   [Marium Tapal](https://github.com/mariumtapal)
+-   [Irene Ryan](https://github.com/ireneryan)
+-   [Rana Gahwagy](https://github.com/ranawg)
+-   [Benjamin S. Baumer](https://github.com/beanumber)
