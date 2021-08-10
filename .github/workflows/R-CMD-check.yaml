@@ -33,9 +33,16 @@ jobs:
       - uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
-          
+        
       - uses: r-lib/actions/setup-pandoc@master
       
+      - name: Cache R packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-2-${{ hashFiles('depends.Rds') }}
+          restore-keys: ${{ runner.os }}-r-2-
+          
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck", "vctrs"))
