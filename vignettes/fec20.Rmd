@@ -1,0 +1,236 @@
+---
+title: "fec20"
+author: "Marium Tapal"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{fec20}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r message=FALSE, warning=FALSE, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 6, fig.height = 4.5
+)
+library(fec20)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(stringr)
+```
+
+The `fec20` package houses the relational [datasets](https://www.fec.gov/data/browse-data/?tab=bulk-data) from the U.S. Federal 2020 elections. Some datasets are included in full, while a sample of the others is available with the option of retrieving the entire datasets through the functions built in the package. 
+
+This package is the successor of the `fec16` package (of the 2016 elections). For more details, visit the [`fec16` vignette](https://github.com/baumer-lab/fec16/blob/master/vignettes/fec_vignette.Rmd).
+
+## Who should use this package? 
+
+Anyone interested in US politics and elections who wants to use actual data to think critically and make inferences. We made this package particularly with students and instructors in mind as there is demand for relational data in teaching. Like `fe16`, `fec20` is another one-stop shop for acquiring data of this genre.
+
+## Datasets Included
+
+### Full Datasets
+
+- `candidates`: candidates registered with the FEC during the 2019-2020 election cycle
+- `committees`: committees registered with the FEC during the 2019-2020 election cycle
+- `campaigns`: the house/senate current campaigns
+- `pac`: Political Action Committee (PAC) and party summary financial information
+- `states`: geographical information about the 50 states
+
+### Sample Datasets (with 1000 random rows each)
+
+- `individuals`: individual contributions to candidates/committees during the 2020 general presidential election
+- `contributions`: candidates and their contributions from committees during the 2020 general election
+- `expenditures`: the operating expenditures 
+- `transactions`: transactions between committees
+
+### Forthcoming Datasets
+
+There are 3 forthcoming datasets that contain results from the House, Senate, and Presidential elections.
+
+## Functions Included
+
+The following functions retrieve the entire datasets for the sampled ones listed above. The size of the raw file that is downloaded by calling each function is given for reference. All functions have an argument `n_max` which defaults to the entire dataset but the user can specify the max length of the dataset to be loaded via this argument.
+
+- `read_all_individuals()` ~ 9.33GB
+- `read_all_contributions()` ~ 28.9MB
+- `read_all_expenditures()` ~ 65.6MB
+- `read_all_transactions()` ~ 235MB
+
+for example:
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+# The entire expenditures dataset can be accessed by:
+all_expenditures <- fec20::read_all_expenditures()
+
+# The first 30 entries in this dataset can be accessed by:
+expenditures_30 <- fec20::read_all_expenditures(n_max = 30)
+```
+
+More details can be found on the documentation pages which can be called via: `?function_name`
+
+## What does the data look like?
+
+The first six rows of the `candidates` dataset look like:
+```{r}
+head(candidates)
+```
+
+## Examples
+
+### Data Wrangling 
+
+`fec16` can be used to summarize data in order see how many candidates are running for elections (in all offices) for the two major parties:
+
+```{r, message=FALSE}
+library(dplyr)
+
+data <- candidates %>%
+  filter(cand_pty_affiliation %in% c("REP", "DEM")) %>%
+  group_by(cand_pty_affiliation) %>%
+  summarize(size = n())
+
+data
+```
+
+### Data Visualization 
+
+We can visualize the above data:
+
+```{r party-plot, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+ggplot(data, aes(x = cand_pty_affiliation, y = size, fill = cand_pty_affiliation)) +
+  geom_col() +
+  labs(
+    title = "Number of Candidates Affiliated with the Two Major Parties",
+    x = "Party", y = "Count", fill = "Candidate Party Affiliation"
+  )
+```
+
+<!-- This section can be added back once the results datasets are in! -->
+
+<!-- ## What can we do with this data? -->
+
+<!-- We can use this package to address the (non-exhaustive) list of questions:  -->
+
+<!--   1. Which presidential candidate won majority in more states? -->
+<!--   2. What is the relationship between contributions of candidates and total votes they get? -->
+<!--   3. Which candidate got the most popular vote and how many? -->
+
+<!-- To answer our questions we can make use of some **data wrangling** and **data visualization** techniques. Some examples (addressing the questions above) are shown below: -->
+
+<!-- ### Example 1: -->
+
+<!-- **Which presidential candidate won a majority in more states, and how many votes did they get?** -->
+
+<!-- Using the `results_president` dataset, we can also see what actually happened in the 2020 elections. -->
+
+<!-- Here is how we can summarize the number of wins by candidate: -->
+<!-- ```{r message=FALSE, warning=FALSE} -->
+<!-- wins <- left_join(results_president, candidates) %>% -->
+<!--   group_by(cand_id, cand_name) %>% -->
+<!--   summarise( -->
+<!--     total_votes = sum(general_votes, na.rm = TRUE), -->
+<!--     states_won = sum(won) -->
+<!--   ) %>% -->
+<!--   arrange(desc(total_votes)) -->
+<!-- head(wins) -->
+<!-- ``` -->
+
+<!-- Compare these results to [those reported by the Wikipedia](https://en.wikipedia.org/wiki/2020_United_States_presidential_election). -->
+<!-- We can show the results using a simple bar chart: -->
+
+<!-- Each win is for a single state. There are 51 total wins for the 50 States and Washington, D.C. -->
+<!-- ```{r} -->
+<!-- ggplot( -->
+<!--   wins %>% head(6), -->
+<!--   aes(x = reorder(cand_name, total_votes), y = total_votes, fill = cand_id) -->
+<!-- ) + -->
+<!--   geom_col() + -->
+<!--   scale_fill_discrete(guide = FALSE) + -->
+<!--   scale_y_continuous(labels = comma) + -->
+<!--   labs( -->
+<!--     title = "2020 Presidential Election", -->
+<!--     subtitle = "Total votes", -->
+<!--     x = NULL, y = "Number of Votes" -->
+<!--   ) + -->
+<!--   coord_flip() -->
+<!-- ``` -->
+
+<!-- We can see that Hillary Clinton earned the most votes.  -->
+
+<!-- ### Example 2: -->
+
+<!-- **What is the relationship between contributions of candidates in the house and total votes they get?** -->
+
+<!-- Here we investigate what kind of relationship, if any, the candidates with over a 1000 votes got with the total contributions they made. We are interested in candidates with an ID number so we can join them with the contribution data set by using `inner_join`. -->
+
+<!-- ```{r eval=FALSE, message=FALSE, warning=FALSE} -->
+<!-- all_contributions <- fec20::read_all_contributions() -->
+<!-- results_by_cand <- left_join(results_house, candidates, by = "cand_id") %>% -->
+<!--   left_join(all_contributions, by = "cand_id") %>% -->
+<!--   group_by(cand_id, cand_name, cand_pty_affiliation) %>% -->
+<!--   summarise( -->
+<!--     sum_votes = sum(general_votes), -->
+<!--     contribution = sum(transaction_amt) -->
+<!--   ) %>% -->
+<!--   filter(sum_votes > 1000) -->
+<!-- head(results_by_cand) -->
+<!-- ``` -->
+<!-- ```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- # save local .Rdata file to save time on compilation -->
+<!-- # save(results_by_cand, file = "results_by_cand.Rda") -->
+<!-- load(file = "results_by_cand.Rda") -->
+<!-- head(results_by_cand) -->
+<!-- ``` -->
+
+
+<!-- Next, we plot the contributions and votes on a scatter plot and plot a trend line that would make it easy for us to see the relationship. Since there are outliers in the data, it is best to not use a continuous axis scale in order to see all of the points.  -->
+
+<!-- ```{r eval=TRUE, message=FALSE, warning=FALSE} -->
+<!-- ggplot(results_by_cand, aes(x = contribution, y = sum_votes)) + -->
+<!--   geom_point() + -->
+<!--   scale_x_log10(labels = comma) + -->
+<!--   scale_y_sqrt(labels = comma) + -->
+<!--   geom_smooth(method = "auto") + -->
+<!--   labs( -->
+<!--     title = "Contributions vs. Votes in 2020", -->
+<!--     x = "Contributions in US Dollars", y = "Total Votes" -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- As we can see, the highest contributors got the highest amount of votes so it has a positive correlation, but then it falls after a large contribution amount.  -->
+
+
+<!-- ### Example 3: -->
+
+<!-- **What is the distribution of number of votes across winners in the US House of Representatives?** -->
+
+<!-- Visualize the results of the popular vote in the elections and see how many people voted:  -->
+<!-- ```{r message=FALSE, warning=FALSE} -->
+<!-- house_winners <- left_join(results_house, candidates, by = "cand_id") %>% -->
+<!--   mutate(party_1 = str_sub(party, 1, 1)) %>% -->
+<!--   filter(won, state %in% state.abb) %>% -->
+<!--   group_by(cand_id, cand_name, party_1) %>% -->
+<!--   summarize( -->
+<!--     total_votes = sum(general_votes), -->
+<!--     total_pct = sum(general_percent), -->
+<!--   ) -->
+
+<!-- ggplot( -->
+<!--   house_winners, -->
+<!--   aes( -->
+<!--     x = total_votes, y = total_pct, -->
+<!--     color = party_1 -->
+<!--   ) -->
+<!-- ) + -->
+<!--   geom_point() + -->
+<!--   labs( -->
+<!--     title = "Not all Congressional Races are the same", -->
+<!--     fill = "Candidate", x = "Total Votes", "Total Percent" -->
+<!--   ) + -->
+<!--   scale_y_continuous(labels = comma) -->
+<!-- ``` -->

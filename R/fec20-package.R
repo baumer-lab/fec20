@@ -3,7 +3,7 @@
 #' The fec20 package provides the following 6 datasets from the Federal Election Commission's 2019-2020 election cycle:
 #'
 #' @section Datasets:
-#' \if{html}{\figure{hex_fec20.png}{options: align = "right" width="45\%" alt="Figure: hex_fec16.png"}}
+#' \if{html}{\figure{hex_fec20.png}{options: align = "right" width="45\%" alt="Figure: hex_fec20.png"}}
 #' \itemize{
 #'   \item Candidates: [candidates]
 #'   \item Committees: [committees]

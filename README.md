@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![CRAN
 status](https://r-pkg.org/badges/version/fec20)](https://CRAN.R-project.org/package=fec20)
 [![R build
@@ -91,45 +91,27 @@ keys**. The arrows show how the datasets are connected.
 The diagram is built using the `dm` R package. The code can be found in
 `data-raw/dm.R`.
 
-## Examples
+## Usage and Examples
 
-### Data Wrangling
-
-`fec20` can be used to summarize data in order see how many candidates
-are running for elections (in all offices) for the two major parties:
+All the included datasets in `fec20` are lazy-loaded, so you can easily
+load it via:
 
 ``` r
-library(dplyr)
+head(candidates)
+?candidates
 
-data <- candidates %>%
-  filter(cand_pty_affiliation %in% c("REP", "DEM")) %>%
-  group_by(cand_pty_affiliation) %>%
-  summarize(size = n())
-
-data
-#> # A tibble: 2 x 2
-#>   cand_pty_affiliation  size
-#> * <chr>                <int>
-#> 1 DEM                   1836
-#> 2 REP                   1879
+# If using RStudio:
+View(candidates)
 ```
 
-### Data Visualization
-
-We can visualize the above data:
+To use any of the `read_all_*` functions, you can run:
 
 ``` r
-library(ggplot2)
-
-ggplot(data, aes(x = cand_pty_affiliation, y = size, fill = cand_pty_affiliation)) +
-  geom_col() +
-  labs(
-    title = "Number of Candidates Affiliated with the Two Major Parties",
-    x = "Party", y = "Count", fill = "Candidate Party Affiliation"
-  )
+all_contributions <- read_all_expenditures()
 ```
 
-<img src="man/figures/README-party-plot-1.png" width="100%" />
+For example usage of the datasets, please view the
+[vignette](https://github.com/baumer-lab/fec20/blob/main/vignettes/fec20.Rmd).
 
 ## See Also
 
@@ -142,6 +124,4 @@ packages:
 ## Contributors
 
 -   [Marium Tapal](https://github.com/mariumtapal)
--   [Irene Ryan](https://github.com/ireneryan)
--   [Rana Gahwagy](https://github.com/ranawg)
 -   [Benjamin S. Baumer](https://github.com/beanumber)
